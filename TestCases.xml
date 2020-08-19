@@ -1,17 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Nopcommerce">
-	<parameter name="browser" value="firefox"></parameter>
-	<test name="startTesting"  preserve-order="false">
+	<parameter name="browser" value="headless"></parameter>
+	<test name="startTesting" preserve-order="false">
 		<classes>
-			<class name="testcases.UserRegisteration" />
-			<class name="testcases.AddToCompareTest" />
 			<class name="testcases.ChangeCurrency" />
 			<class name="testcases.ContactUS" />
-			<class name="testcases.EmailToFriendTest" />
-			<class name="testcases.OrderReview" />
-			<class name="testcases.ProduvtHover" />
-			<class name="testcases.SearchProductswithAutoCompelte" />
-			<class name="testcases.UserRegisteration" />
+
 		</classes>
 	</test>
 </suite> 

@@ -1,0 +1,11 @@
+testcases\ContactUS.class
+testcases\SearchForItems.class
+testcases\ChangeCurrency.class
+testcases\UserRegisteration.class
+testcases\TestBase.class
+testcases\EmailToFriendTest.class
+testcases\AddToCompareTest.class
+testcases\OrderReview.class
+testcases\ProduvtHover.class
+testcases\SearchProductswithAutoCompelte.class
+utilites\Helper.class

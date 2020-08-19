@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="testcases.UserRegisteration">
+        <methods>
+          <include name="OpenLoginPage"/>
+          <include name="CloseDriver"/>
+          <include name="startDriver"/>
+          <include name="navigateToHome"/>
+          <include name="EnterLgoinData"/>
+          <include name="tearDownClass"/>
+          <include name="successfullRegisteration"/>
+          <include name="screenshootonfailure"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- testcases.UserRegisteration -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

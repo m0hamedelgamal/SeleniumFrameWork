@@ -16,21 +16,19 @@ public class UserRegWithDDT extends TestBase
 	LoginIn loginObject ; 
 	ChangePassword ChangepswdObject; 
  
-	@DataProvider(name = "testData")
+	@DataProvider(name ="testData")
 	public static Object [][] userdata()
 	{
-		
-	}
-	
-	//Registeration Data 
-	String firstName="Mohmae7ad"; 
-	String lastName="Ealgaaamal" ; 
-	String eMail="jaaaaass555ky1@3xx.com"; 
-	String Pswd="asd123456"; 
-	String NewPswd="123456"; 
+		 return new Object[][] {
+			 {"Mohamed" ,"Elgaamal","g0mai@xxx.com" ,"asd123456" } , 
+			 {"Mohamed" ,"Elgaamal","g0maix1@xxx.com" ,"asd123456" } , 
+			 {"Mohamed" ,"Elgaamal","g0maix1@xxx.com" ,"asd123456" } ,
+			 {"Mohamed" ,"Elgaamal","g0maixa1@xxx.com" ,"asd123456" } 
+		 };}
 
-	@Test (priority = 1) 
-	public void successfullRegisteration() throws InterruptedException
+
+	@Test (priority = 1 , dataProvider = "testData") 
+	public void successfullRegisteration(String firstName ,String lastName ,String eMail, String Pswd ) throws InterruptedException
 	{
 		ClickRegisteratinObject= new ClickRegisetrationLink(driver); 
 		ClickRegisteratinObject.openRegisterLink();
@@ -40,24 +38,17 @@ public class UserRegWithDDT extends TestBase
 		registerationPageObject.EnterData(firstName, lastName,eMail,Pswd);
 		Assert.assertTrue(registerationPageObject.Successregister.getText()
 				.contains("Your registration completed"));
-	}
-
-	@Test(priority = 2)
-	public void OpenLoginPage() throws InterruptedException
-	{
-		ClickRegisteratinObject= new ClickRegisetrationLink(driver); 
+		// Logout
 		ClickRegisteratinObject.Clicklogout();
-		ClickRegisteratinObject.openloginPage()                     	; 
-	}
-
-	@Test (priority = 3)
-	public void EnterLgoinData() throws InterruptedException
-	{
+		ClickRegisteratinObject.openloginPage();    
+		//login
 		loginObject = new LoginIn(driver); 
-		loginObject.EnterLoginData(eMail,Pswd);
-		changepassword();
+		loginObject.EnterLoginData(eMail,Pswd); 
+		
+		ClickRegisteratinObject.Clicklogout();
 
 	}
+	/*
 	@Test(enabled = false)
 	public void changepassword()
 
@@ -67,4 +58,4 @@ public class UserRegWithDDT extends TestBase
 		ChangepswdObject.chagnePassword(Pswd, NewPswd);
 		Assert.assertTrue(ChangepswdObject.resultconfirmation.getText()
 				.contains("Password was changed"));
-	}}
+	}*/}

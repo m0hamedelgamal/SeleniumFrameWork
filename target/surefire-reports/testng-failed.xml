@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Nopcommerce]">
+  <parameter name="browser" value="firefox"/>
+  <test thread-count="5" verbose="0" name="startTesting(failed)">
+    <classes>
+      <class name="testcases.UserRegisteration">
+        <methods>
+          <include name="OpenLoginPage"/>
+          <include name="CloseDriver"/>
+          <include name="startDriver"/>
+          <include name="EnterLgoinData"/>
+          <include name="screenshootonfailure"/>
+        </methods>
+      </class> <!-- testcases.UserRegisteration -->
+      <class name="testcases.ChangeCurrency">
+        <methods>
+          <include name="CloseDriver"/>
+          <include name="startDriver"/>
+          <include name="searchItems"/>
+          <include name="screenshootonfailure"/>
+        </methods>
+      </class> <!-- testcases.ChangeCurrency -->
+      <class name="testcases.EmailToFriendTest">
+        <methods>
+          <include name="searchItems"/>
+          <include name="CloseDriver"/>
+          <include name="startDriver"/>
+          <include name="userRegisteration"/>
+          <include name="emailtofriend"/>
+          <include name="screenshootonfailure"/>
+        </methods>
+      </class> <!-- testcases.EmailToFriendTest -->
+      <class name="testcases.AddToCompareTest">
+        <methods>
+          <include name="compareAddedElements"/>
+          <include name="CloseDriver"/>
+          <include name="clearCompareList"/>
+          <include name="startDriver"/>
+          <include name="screenshootonfailure"/>
+        </methods>
+      </class> <!-- testcases.AddToCompareTest -->
+      <class name="testcases.SearchProductswithAutoCompelte">
+        <methods>
+          <include name="CloseDriver"/>
+          <include name="startDriver"/>
+          <include name="searchItems"/>
+          <include name="screenshootonfailure"/>
+        </methods>
+      </class> <!-- testcases.SearchProductswithAutoCompelte -->
+      <class name="testcases.OrderReview">
+        <methods>
+          <include name="addItemReviw"/>
+          <include name="userRegisteration"/>
+          <include name="CloseDriver"/>
+          <include name="startDriver"/>
+          <include name="searchItems"/>
+          <include name="screenshootonfailure"/>
+        </methods>
+      </class> <!-- testcases.OrderReview -->
+    </classes>
+  </test> <!-- startTesting(failed) -->
+</suite> <!-- Failed suite [Nopcommerce] -->

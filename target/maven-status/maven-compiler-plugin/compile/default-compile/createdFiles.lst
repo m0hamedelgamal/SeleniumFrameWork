@@ -1,0 +1,11 @@
+pages\SendToFriendPage.class
+pages\OrderReviewPage.class
+pages\ChangePassword.class
+pages\compareItemsPage.class
+pages\SearchPage.class
+pages\PageBase.class
+pages\ClickRegisetrationLink.class
+pages\LoginIn.class
+pages\ItemsPage.class
+pages\Registeration.class
+pages\ContactUsPage.class

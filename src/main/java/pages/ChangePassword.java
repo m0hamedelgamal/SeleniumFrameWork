@@ -33,13 +33,11 @@ public class ChangePassword extends PageBase{
 	
 	public void chagnePassword(String oldpassword , String newpassword)
 	{
-
 		ClickBTNS(changePSWDbtn);
 		SetTextValue(oldpswdtxt,oldpassword);
 		SetTextValue(newpswdtxt, newpassword);
 		SetTextValue(Confirmnewpswdtxt, newpassword);
 		ClickBTNS(confirmChangingPswdbtn);
-
 	}
 
 }

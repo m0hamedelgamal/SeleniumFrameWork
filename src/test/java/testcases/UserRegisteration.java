@@ -16,9 +16,9 @@ public class UserRegisteration extends TestBase
 	ChangePassword ChangepswdObject; 
 
 	//Registeration Data 
-	String firstName="Mohmae7ad"; 
-	String lastName="Ealgaaamal" ; 
-	String eMail="jaaaaass555ky1@3xx.com"; 
+	String firstName="Mo7ad"; 
+	String lastName="Ealamal" ; 
+	String eMail="jsas555ky1@3xx.com"; 
 	String Pswd="asd123456"; 
 	String NewPswd="123456"; 
 

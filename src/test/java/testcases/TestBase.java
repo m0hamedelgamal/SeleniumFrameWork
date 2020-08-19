@@ -19,10 +19,10 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import utilites.Helper;
 
-public class TestBase 
+public class TestBase extends AbstractTestNGCucumberTests
 {
 	public static WebDriver driver ; 
 	public static String downloadPath= System.getProperty("user.dir")+"\\Downloads" ;
@@ -37,10 +37,20 @@ public class TestBase
 		options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		return options;
 	}
-
+	public static ChromeOptions HeadlesschromeOption()
+	{
+		ChromeOptions options = new ChromeOptions();
+		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+		chromePrefs.put("profile.default.content_settings.popups", 0);
+		chromePrefs.put("download.default_directory", downloadPath);
+		options.setExperimentalOption("prefs", chromePrefs);
+		options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		options.addArguments("--headless"); 
+		options.addArguments("--window-size=1920,1080"); 
+		return options;
+	}
 	public static FirefoxOptions fireFoxOption()
 	{
-
 		FirefoxOptions option = new FirefoxOptions();
 		option.addPreference("browser.download.folderList", 2);
 		option.addPreference("browser.download.dir", downloadPath);
@@ -81,6 +91,14 @@ public class TestBase
 			System.setProperty("webdriver.edge.driver", 
 					System.getProperty("user.dir")+"\\Drivers\\msedgedriver.exe");
 			driver = new EdgeDriver();
+		}
+		else if (browserType.equalsIgnoreCase("headless")) 
+
+		{
+
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
+			driver= new ChromeDriver(HeadlesschromeOption()); 
 		}
 
 		driver.navigate().to("https://demo.nopcommerce.com/"); 

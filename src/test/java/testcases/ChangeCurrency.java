@@ -30,7 +30,7 @@ public class ChangeCurrency extends TestBase
 		searchpageobject= new SearchPage(driver); 
 		searchpageobject.SearchWithAutocomplete(itemtxt , proudctId);
 		itemspageobject=new ItemsPage(driver); 
-		Assert.assertTrue(itemspageobject.itemPrice.getText().contains("Ђ"));
+		Assert.assertTrue(itemspageobject.itemPrice.getText().contains("€"));
 		System.out.println(itemspageobject.itemPrice.getText());
 	}
 

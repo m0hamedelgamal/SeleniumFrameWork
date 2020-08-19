@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Nopcommerce">
-	<parameter name="browser" value="headless"></parameter>
+	<parameter name="browser" value="firefoxheadless"></parameter>
 	<test name="startTesting" preserve-order="false">
 		<classes>
 			<class name="testcases.ChangeCurrency" />

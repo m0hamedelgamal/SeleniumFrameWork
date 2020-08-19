@@ -59,6 +59,18 @@ public class TestBase extends AbstractTestNGCucumberTests
 		option.addPreference("pdfjs.disabled", true);
 		return option;
 	}
+	public static FirefoxOptions HeadlessfireFoxOption()
+	{
+		FirefoxOptions option = new FirefoxOptions();
+		option.addPreference("browser.download.folderList", 2);
+		option.addPreference("browser.download.dir", downloadPath);
+		option.addPreference("browser.helperApps.neverAsk.saveToDisk","application/octet-stream");
+		option.addPreference("browser.download.manager.showWhenStarting", false);
+		option.addPreference("pdfjs.disabled", true);
+		option.addArguments("--headless"); 
+		option.addArguments("--window-size=1920,1080"); 
+		return option;
+	}
 
 	@BeforeSuite
 	@Parameters({"browser"})
@@ -92,7 +104,8 @@ public class TestBase extends AbstractTestNGCucumberTests
 					System.getProperty("user.dir")+"\\Drivers\\msedgedriver.exe");
 			driver = new EdgeDriver();
 		}
-		else if (browserType.equalsIgnoreCase("headless")) 
+		//HeadLess_Chrome_Browser
+		else if (browserType.equalsIgnoreCase("chromeheadless")) 
 
 		{
 
@@ -100,11 +113,25 @@ public class TestBase extends AbstractTestNGCucumberTests
 					System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
 			driver= new ChromeDriver(HeadlesschromeOption()); 
 		}
+		
+		//HeadLess_firefox_Browser
+		else if (browserType.equalsIgnoreCase("firefoxheadless")) 
+
+		{
+
+			System.setProperty("webdriver.gecko.driver", 
+					System.getProperty("user.dir")+"\\Drivers\\geckodriver.exe");
+			driver= new FirefoxDriver(HeadlessfireFoxOption()); 
+		}
+		
+		
 
 		driver.navigate().to("https://demo.nopcommerce.com/"); 
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	}
+
+
 	@AfterSuite
 	public void CloseDriver()
 	{
